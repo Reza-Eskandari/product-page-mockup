@@ -37,24 +37,27 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
   font-family: Montserrat, Helvetica, sans-serif;
+  // &::-webkit-scrollbar {
+  //   width: 0.5rem;
+  //   padding: 2rem;
+  //   height: 1rem;
+  // }
+  // &::-webkit-scrollbar-thumb {
+  //   background: #00000069;
+  //   border-radius: 30px;
+  // }
+  // &::-webkit-scrollbar-track {
+  //   background: transparent;
+  //   background: #0000002f;
+  // }
+
   &::-webkit-scrollbar {
-    width: 0.5rem;
-    padding: 2rem;
-    height: 1rem;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #00000069;
-    border-radius: 30px;
-    // background: linear-gradient(145deg, #d0d0d0, #f7f7f7);
-    // box-shadow: 2px 2px 3px #c4c4c4, -2px -2px 3px #ffffff;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-    background: #0000002f;
+    display: none;
   }
 }
 
@@ -85,6 +88,7 @@ body {
 }
 
 .footer {
+  // margin-top: 30rem;
   height: 50vh;
   background: orange;
 }
@@ -379,6 +383,7 @@ body {
         width: calc(25% - 3rem);
         // background: chartreuse;
         opacity: 0;
+        visibility: hidden;
         position: absolute;
         bottom: 0;
         left: 3rem;

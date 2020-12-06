@@ -35,7 +35,6 @@ var mySwiper = new Swiper(".swiper-container", {
 });
 
 var spSwiper = new Swiper(".swiper-container-sp", {
-  // slidesPerView: "auto",
   grabCursor: true,
   direction: "horizontal",
   slidesPerView: "auto",
@@ -105,22 +104,51 @@ function accardionTabletPhone() {
 
 function showSimilarProductsDesktop() {
   mySwiper.on("reachEnd", function () {
-    console.log("Swiper reached end");
-    $(".similar-products").css("opacity", 1);
-    mySwiper.mousewheel.disable();
-    $(".box2").css("pointer-events", "none");
+    console.log("mySwiper reached end");
+    $(".similar-products").css({ opacity: 1, visibility: "visible" });
+    mySwiper.allowSlidePrev = false;
+    // $(".box2").css("pointer-events", "none");
     spSwiper.mousewheel.enable();
+    mySwiper.mousewheel.disable();
   });
 
   spSwiper.on("reachBeginning", function () {
-    $(".box2").css("pointer-events", "");
+    console.log("spSwiper reached beginning");
+    mySwiper.allowSlidePrev = true;
+    // $(".box2").css("pointer-events", "");
     mySwiper.mousewheel.enable();
     spSwiper.mousewheel.disable();
   });
 
   mySwiper.on("fromEdge", function () {
-    console.log("fromEdge");
-    $(".similar-products").css("opacity", 0);
+    console.log("mySwiper is going from beginning or end");
+    $(".similar-products").css({ opacity: 0, visibility: "hidden" });
     spSwiper.mousewheel.disable();
+  });
+
+  spSwiper.on("reachEnd", function () {
+    $("html").css("overflow", "auto");
+  });
+
+  ///////////////////////////////////////////////////////
+
+  ScrollTrigger.create({
+    markers: true,
+    trigger: ".grid",
+    end: "100% 99%",
+    // onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+    onToggle: (self) => {
+      if (self.isActive) {
+        $("html").css("overflow", "hidden");
+        spSwiper.mousewheel.enable();
+        spSwiper.allowSlidePrev = true;
+        // $(".grid").css("pointer-events", "");
+      } else {
+        $("html").css("overflow", "auto");
+        spSwiper.mousewheel.disable();
+        spSwiper.allowSlidePrev = false;
+        // $(".grid").css("pointer-events", "none");
+      }
+    },
   });
 }

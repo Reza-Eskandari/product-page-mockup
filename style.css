@@ -22,19 +22,7 @@ html {
 }
 
 html::-webkit-scrollbar {
-  width: 0.5rem;
-  padding: 2rem;
-  height: 1rem;
-}
-
-html::-webkit-scrollbar-thumb {
-  background: #00000069;
-  border-radius: 30px;
-}
-
-html::-webkit-scrollbar-track {
-  background: transparent;
-  background: #0000002f;
+  display: none;
 }
 
 body {
@@ -467,6 +455,7 @@ body {
     height: 100%;
     width: calc(25% - 3rem);
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     bottom: 0;
     left: 3rem;
