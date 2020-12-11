@@ -13,6 +13,13 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+    <link
+      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
 
     <script
@@ -28,10 +35,23 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"
       defer
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.3/tilt.jquery.min.js"
+      defer
+    ></script>
+
     <script src="./index.js" defer></script>
   </head>
   <div class="nav"></div>
   <body>
+    <script
+      type="module"
+      src="https://modelviewer.dev/node_modules/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
     <div class="grid">
       <div class="box1">
         <h1 class="p-title">COMPOUND HOODIE</h1>
@@ -55,6 +75,29 @@
                   src="https://cdn.shopify.com/s/files/1/0156/6146/products/COMPOUNDHOODIESEATEAL.A-Edit_ZH.jpg?v=1599234499"
                   alt=""
                 />
+              </div>
+              <div class="shadow-overlay"></div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                data-swiper-zoom="1"
+                class="swiper-no-swiping swiper-zoom-container"
+              >
+                <model-viewer
+                  class="swiper-zoom-target"
+                  camera-controls
+                  auto-rotate
+                  rotation-per-second="1rad"
+                  shadow-intensity="1"
+                  src="https://model3d.shopifycdn.com/models/o/b2bd7a65afe84439/sweater.glb"
+                  data-shopify-feature="1.2"
+                  alt="Revival Bra - Atlantis"
+                  poster="//cdn.shopify.com/s/files/1/0483/4597/2898/products/sweater_1000x.jpg?v=1605479868"
+                  data-js-focus-visible=""
+                  ar-status="not-presenting"
+                >
+                  <div id="lazy-load-poster" slot="poster"></div
+                ></model-viewer>
               </div>
               <div class="shadow-overlay"></div>
             </div>
@@ -95,6 +138,13 @@
               <div class="shadow-overlay"></div>
             </div>
           </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="fas fa-chevron-left"></i>
+          </div>
           <div class="swiper-scrollbar"></div>
         </div>
       </div>
@@ -111,7 +161,9 @@
 
           <div class="color-container">COLOR</div>
           <div class="size-container">SIZE</div>
-          <button class="addtocart">ADD TO CART +</button>
+          <button class="addtocart">
+            <span>ADD TO CART +</span>
+          </button>
           <div class="accardion-container">
             <div class="item">
               <div class="title-wrapper">
@@ -228,6 +280,7 @@
               </div>
             </div>
           </div>
+          <h3 class="ymal-tabPhone">YOU MIGHT ALSO LIKE</h3>
           <div class="similar-products">
             <!-- Swiper -->
             <div class="swiper-container-sp">
